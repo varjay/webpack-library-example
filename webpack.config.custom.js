@@ -13,24 +13,22 @@ module.exports = {
     // libraryExport: 'default',
     library: 'webpackNumbers'
   },
-  externals: {
-    'lodash': {
-      commonjs: 'lodash',
-      commonjs2: 'lodash',
-      amd: 'lodash',
-      root: '_'
-    }
-  },
   module: {
-    rules: [{
-      test: /\.(js)$/,
-      exclude: /(node_modules|bower_components)/,
-      use: 'babel-loader'
-    },
-    {
-      test: /\.vue$/,
-      use: 'vue-loader'
-    },
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+      {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      },
     ]
   },
   devServer: {
