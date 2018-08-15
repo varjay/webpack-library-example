@@ -4,8 +4,9 @@
   "description": "An example of how to author libraries using webpack",
   "main": "dist/webpack-numbers.js",
   "scripts": {
+    "dev": "webpack-dev-server --mode development --config ./webpack.config.custom.js",
     "build:browser": "webpack && cp dist/webpack-numbers.js examples/browser",
-    "build:node": "webpack && cp dist/webpack-numbers.js examples/node/ && node examples/node/example.js",
+    "build:node": "webpack && cp dist/webpack-numbers.js examples/node/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -23,8 +24,14 @@
     "babel-preset-env": "^1.6.1",
     "eslint": "^3.9.1",
     "eslint-loader": "^1.6.1",
-    "lodash": "^4.16.6",
+    "html-webpack-plugin": "^3.2.0",
+    "vue-loader": "^15.3.0",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.12"
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
   }
 }
